@@ -1,7 +1,7 @@
 # rclone-addon-onedrive
-Rclone addon for Kodi Matrix v19
+Rclone addon for Kodi Matrix v19 from fandangos
 
-Updated to work with Sony Android TVs
+Updated to work with Sony Android TVs and includes onedrive as default
 
 1. Install from zip
 2. name rclone remote "onedrive" or edit main.py with your remote name under kodi installation dir/addons/script.service.rclone
