@@ -1,7 +1,7 @@
 # rclone-addon-onedrive
 Rclone addon for Kodi Matrix v19
 
-To be used with Android boxes and phones.
+Updated to work with Sony Android TVs
 
 1. Install from zip
 2. name rclone remote "onedrive" or edit main.py with your remote name under kodi installation dir/addons/script.service.rclone
@@ -10,6 +10,6 @@ To be used with Android boxes and phones.
 To access your files
 
 1. Add a webdav source
-2. address localhost
+2. address 127.0.0.1
 3. port 23457
 
