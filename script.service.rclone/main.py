@@ -15,5 +15,5 @@ logfile  = xbmcvfs.translatePath("special://temp/librclone.log")
 cachepath  = xbmcvfs.translatePath("special://temp")
 
 while True:
-    os.popen(loc + " serve webdav <insert your remote here>: --addr :23457 --config " + loc2 + " --log-file=" + logfile + " --dir-cache-time 2400h --poll-interval 10m")
+    os.popen(loc + " serve webdav onedrive: --addr :23457 --config " + loc2 + " --log-file=" + logfile + " --dir-cache-time 2400h --poll-interval 10m")
     break
