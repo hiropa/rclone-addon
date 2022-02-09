@@ -17,6 +17,7 @@ if PY3:
 	pidfile  = xbmcvfs.translatePath("special://temp/librclone.pid")
 	logfile  = xbmcvfs.translatePath("special://temp/librclone.log")
 	cachepath  = xbmcvfs.translatePath("special://temp") 
+	src = xbmcvfs.translatePath("special://masterprofile/rclone-android-16-arm")
 else:
 	zippath  = xbmc.translatePath("special://temp/rclone.gz")
 	loc = xbmc.translatePath("special://xbmcbin/../../../cache/lib/rclone-android-16-arm")
@@ -25,29 +26,15 @@ else:
 	pidfile  = xbmc.translatePath("special://temp/librclone.pid")
 	logfile  = xbmc.translatePath("special://temp/librclone.log")
 	cachepath  = xbmc.translatePath("special://temp") 	
+	src = xbmc.translatePath("special://masterprofile/rclone-android-16-arm")
 
 if os.name == 'nt':
 	loc = locwin
 
 if not xbmcvfs.exists(loc):
-	progress_bar = xbmcgui.DialogProgressBG()
-	progress_bar.create('Download', '')
-
-	def reporthook(block_number, block_size, total_size):
-		if 0 == block_number & 511:
-			 percent = (block_number * block_size * 100) / total_size
-			 progress_bar.update(int(percent))
-			 
-	urllib.request.urlretrieve(sourceurl, zippath, reporthook)
-	progress_bar.close()
-	input = gzip.GzipFile(zippath, 'rb')
-	s = input.read()
-	input.close()
-	output = open(loc, 'wb')
-	output.write(s)
-	output.close()
-	st = os.stat(loc)
-	os.chmod(loc, st.st_mode | stat.S_IEXEC)
+    xbmcvfs.copy(src, loc)
+    st = os.stat(loc)
+    os.chmod(loc, st.st_mode | stat.S_IEXEC)
 
 command = xbmcaddon.Addon().getSetting("parameters")
 
