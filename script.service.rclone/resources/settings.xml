@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+    <category label="32001">
+		<setting label="32012" type="text" id="rclonedownload" default="https://beta.rclone.org/v1.54.0/testbuilds/rclone-android-16-arm.gz"/>
+        <setting label="32011" type="text" id="parameters" default="serve webdav your_rclone_remote:/ --addr :23457 --dir-cache-time 2400h --vfs-cache-max-age 2400h  --poll-interval 10m"/>
+    </category>
+</settings>
